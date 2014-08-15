@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue;
+}
+
+div.descriptions {
+  font-family: Times;
+  font-size: 14px;
+}
+
+div.locations {
+  font-size: 30px;
+  font-family: Times;
+}

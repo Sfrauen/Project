@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" type="text/css" href="result_style.css">
+<body>
+<h1>Here are your results!!</h1>
+
+<div class = "cityclass">
+  <% if @weather == "Warm and Sunny" && @landscape_setting == "Urban and City-like"%>
+  <!-- show cities -->
+  <%  @trip.cities.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+      <br>
+    <% end %>
+<% elsif @weather == "Snowy" && @landscape_setting == "Urban and City-like" %>
+  <% @trip.cities.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+  <% @trip.ski.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+</div>
+<div class = "forestclass">
+<% elsif @weather == "Warm and Sunny" && @landscape_setting == "Forest and Parks" %>
+  <!-- show forest, beaches -->
+   <% @trip.forest.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+  <% @trip.beaches.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+<% elsif @weather == "Snowy" && @landscape_setting == "Forest and Parks" %>
+  <!-- show forest, ski -->
+   <% @trip.forest.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+  <% @trip.ski.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+</div>
+<div class = "beachclass">
+<% elsif (@weather == "Warm and Sunny" || @weather == "Snowy") && @landscape_setting == "Beach" %>
+   <!-- show beaches -->
+   <% @trip.beaches.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+</div>
+<div class = "skiclass">
+<% elsif (@weather == "Warm and Sunny" || @weather == "Snowy") && @landscape_setting == "Ski Mountain" %>
+  <!-- show ski -->
+  <% @trip.ski.each do |place, descr| %>
+      <div class = "locations">
+        <%= place %>
+      </div>
+      <div class = "descriptions">
+      <%= descr %>
+      <br>
+      </div>
+    <%end %>
+</div>
+<%end %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+  background-image: url(fprojectpic.jpg);
+  background-size: cover;
+}
+
+div.questions {
+  background-color: rgba(255,255,255,.55);
+}
+
+div.jumbotron {
+  text-align: center;
+  color: white;
+}
+
+div.jumbotron h2 {
+  text-align: left;
+}
+
+div.jumbotron h3 {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+}
